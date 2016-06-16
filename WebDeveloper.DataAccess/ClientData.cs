@@ -5,8 +5,9 @@ using WebDeveloper.Model;
 
 namespace WebDeveloper.DataAccess
 {
-    public class ClientData
+    public class ClientData :BaseDataAccess<Client>
     {
+        /*
         public List<Client> GetFakeData()
         {
             return new List<Client>
@@ -23,7 +24,9 @@ namespace WebDeveloper.DataAccess
                 return dbContext.Clients.ToList();
 
             }
-        }
+        }*/
+
+
 
     }
 }
