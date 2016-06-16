@@ -9,7 +9,7 @@ using WebDeveloper.Model;
 namespace WebDeveloper.DataAccess
 {
     public class WebDeveloperInitializer : DropCreateDatabaseAlways<WebContextDb>
-    {
+    { 
         protected override void Seed(WebContextDb context)
         {
             var clients = new List<Client>
