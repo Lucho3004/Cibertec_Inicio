@@ -10,12 +10,12 @@ namespace WebDeveloper.Controllers
 {
     public class ClientController : Controller
     {
-        private ClientData _client=new ClientData();
-        
+        private ClientData _client = new ClientData();
+
         // GET: Client
         public ActionResult Index()
         {
-            
+
             return View(_client.GetList());
         }
 
@@ -39,44 +39,43 @@ namespace WebDeveloper.Controllers
 
         public ActionResult Edit(int ID)
         {
-            Client p = new Client();   
-            foreach (Client pn in _client.GetList())
-            {
-                if (pn.ID == ID)
-                {
-                    p.ID = pn.ID;
-                    p.Name = pn.Name;
-                    p.LastName = pn.LastName;
-                    
-                    
-                }
-            }
+            var client = _client.GetClientByID(ID);
 
-            return View(p);
+            if (client == null)
+                RedirectToAction("Index");
+            return View(client);
         }
 
         [HttpPost]
-        public ActionResult Edit(Client c)
+        public ActionResult Edit(Client client)
         {
             if (!ModelState.IsValid)
             {
-                return View("Edit", c);
+                return View("Edit", client);
             }
 
-            foreach (Client pn in _client.GetList())
-            {
-                if (pn.ID == c.ID)
-                {
-                    pn.Name = c.Name;
-                    pn.LastName = c.LastName;
-                    pn.ID = c.ID;
-                    _client.Update(c);
-                }
-            }
-
-            return RedirectToAction("Index");
+            if (_client.Update(client) > 0)
+                return RedirectToAction("Index");
+                return View(client);
         }
 
+        public ActionResult Delete(int ID)
+        {
+
+            var client = _client.GetClientByID(ID);
+
+            if (client == null)
+                RedirectToAction("Index");
+            return View(client);
+        }
+        [HttpPost]
+        public ActionResult Delete(Client client)
+        {
+            
+            if (_client.Delete(client)>0)
+                return RedirectToAction("Index");
+            return View(client);
+        }
 
     }
 }

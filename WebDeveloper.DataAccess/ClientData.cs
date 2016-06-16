@@ -26,7 +26,14 @@ namespace WebDeveloper.DataAccess
             }
         }*/
 
+        public Client GetClientByID(int id)
+        {
+            using (var dbContext = new WebContextDb())
+            {
 
+                return dbContext.Clients.FirstOrDefault(x=>x.ID==id);
+            }
+        }
 
     }
 }
