@@ -6,7 +6,10 @@ namespace WebDeveloper.Model
     public class Product
     {
 
+        
+
         public int ID { get; set; }
+
         [Display(Name = "Description")]
         [MaxLength(25)]
         [Required(ErrorMessage = "This Description is required")]
