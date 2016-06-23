@@ -16,22 +16,17 @@ namespace WebDeveloper.Model
         public string Description{ get; set; }
 
         [Display(Name = "Price")]
-        [Range(300,3000)]
-        [Required(ErrorMessage = "This Price is required")]
-        public float Price { get; set; }
-        
+      //  [Range(300,3000)]
+        //[Required(ErrorMessage = "This Price is required")]
+        public double Price { get; set; }
 
 
-        [Display(Name = "Expiration Date")]
-        [Required(ErrorMessage = "This expiration date is required")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime ExpirationDate { get; set; }
 
-        [Display(Name = "Observation")]
-        [MaxLength(45)]
-        [Required(ErrorMessage = "This Observation is required")]
-        public string Observation{ get; set; }
+        [Display(Name = "Create Date")]
+             [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime? CreateDate { get; set; }
+
+  
 
     }
 }

@@ -24,11 +24,11 @@ namespace WebDeveloper.DataAccess
 
             };
 
-            var products = new List<Product>
-            {
-                    new Product { Description="Product", Price=10, ExpirationDate=DateTime.Now,Observation="HOLA" }
+            //var products = new List<Product>
+            //{
+            //        new Product { Description="Product", Price=10, ExpirationDate=DateTime.Now,Observation="HOLA" }
 
-            };
+            //};
 
             clients.ForEach(c => context.Clients.Add(c));
           /*  products.ForEach(p => context.Products.Add(p));*/
