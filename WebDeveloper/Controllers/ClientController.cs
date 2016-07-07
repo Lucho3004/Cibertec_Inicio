@@ -8,9 +8,18 @@ using WebDeveloper.Model;
 
 namespace WebDeveloper.Controllers
 {
+    [Authorize]
     public class ClientController : Controller
     {
-        private ClientData _client = new ClientData();
+        private ClientData _client;
+
+        public ClientController(ClientData client)
+
+        {
+            _client = client;
+        }
+
+        
 
         // GET: Client
         public ActionResult Index()

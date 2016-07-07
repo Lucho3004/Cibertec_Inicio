@@ -8,6 +8,7 @@ using WebDeveloper.Model;
 
 namespace WebDeveloper.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
 
