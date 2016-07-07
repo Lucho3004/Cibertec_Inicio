@@ -14,6 +14,7 @@ namespace WebDeveloper
     {
         public void ConfigureAuth(IAppBuilder app)
         {
+
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
