@@ -15,7 +15,7 @@ namespace WebDeveloper.Areas.Personal
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Personal_default",
+                "Person_default",
                 "Personal/{action}/{id}",
                 new { controller="Personal", action = "Index", id = UrlParameter.Optional }
             );
